@@ -38,8 +38,14 @@ function App() {
   return (
     <>
       <Navbar />
-      <SearchForm />
-      <PictureGallery pictures={pictures} totalHits={totalResults} />
+      <SearchForm setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
+
+      <PictureGallery
+        searchTerm={searchTerm}
+        pictures={pictures}
+        totalHits={totalResults}
+        loading={loading}
+      />
     </>
   );
 }

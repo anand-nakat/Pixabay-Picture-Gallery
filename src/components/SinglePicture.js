@@ -15,17 +15,18 @@ const SinglePicture = ({
   webformatURL: img,
 }) => {
   const tagsArray = tags.split(",");
-  console.log(tagsArray);
 
   return (
-    <article className="bg-gray-50 dark:bg-gray-900 rounded-b-lg shadow-lg text-white">
-      <img
-        src={img}
-        className="border-b-4 border-yellow-600 w-full"
-        alt={user}
-      />
+    <article className="bg-gray-50 cursor-pointer dark:bg-gray-900 hover:scale-105 rounded-b-lg shadow-lg text-white transform transition-transform">
+      <div>
+        <img
+          src={img}
+          className="border-b-4 border-yellow-600 w-full min-h-full"
+          alt={user}
+        />
+      </div>
       <div className="p-2">
-        <div className="flex items-center justify-around mb-2 px-2 space-x-3">
+        <div className="flex items-center justify-around mb-2 px-2 space-x-0.5">
           <div className="flex items-center space-x-1 font-bold dark:text-white text-indigo-700">
             <AiOutlineDownload className="fill-current text-xl  " />
             <span>{downloads}</span>
@@ -42,8 +43,9 @@ const SinglePicture = ({
             href={pageURL}
             target="_blank"
             rel="noreferrer"
-            className="border border-indigo-700 dark:border-yellow-300 dark:hover:bg-yellow-400 dark:hover:text-black dark:text-gray-50 flex font-semibold 
-            hover:bg-indigo-700 hover:text-white items-center px-1 rounded text-indigo-700 text-sm"
+            className="bg-indigo-600  dark:bg-yellow-600 dark:hover:bg-yellow-500 
+             dark:text-yellow-50 flex font-semibold hover:bg-indigo-700
+             hover:text-white items-center px-1 rounded text-indigo-50 text-sm transition-colors"
           >
             Download <HiDownload className="fill-current" />
           </a>
@@ -60,9 +62,10 @@ const SinglePicture = ({
             return (
               <span
                 key={index}
-                className="bg-indigo-600 cursor-pointer font-semibold hover:bg-indigo-700 p-1 px-3 rounded-full text-indigo-50 text-xs"
+                className="bg-indigo-500 cursor-pointer dark:bg-yellow-600 dark:hover:bg-yellow-500
+                 dark:text-yellow-50 hover:bg-indigo-400 px-2 py-1 rounded-full text-xs transition-colors"
               >
-                {`#${tag.trim()}`}
+                {`${tag.trim()}`}
               </span>
             );
           })}

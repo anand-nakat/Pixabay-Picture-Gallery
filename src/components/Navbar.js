@@ -4,7 +4,7 @@ const Navbar = () => {
   const modeSwitchBtn = React.useRef(null);
   const toggleDarkMode = () => {
     let html = document.querySelector("html");
-    console.log(modeSwitchBtn.current.innerText);
+
     if (html.classList.contains("dark")) {
       html.classList.remove("dark");
       modeSwitchBtn.current.innerText = "Switch Dark Mode";
@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav
       className="w-full p-4 md:px-5 dark:bg-gray-900  tracking-wide font-semibold border-b-2 
-    border-yellow-400 shadow-lg flex justify-between items-center rounded-b bg-indigo-800"
+    border-yellow-500 shadow-lg flex justify-between items-center rounded-b bg-indigo-800"
     >
       <div className="sm:text-2xl text-indigo-50 text-xl">
         <a href="/" className="hover:text-yellow-400">
