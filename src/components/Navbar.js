@@ -5,17 +5,24 @@ import { HiSun, HiMoon } from "react-icons/hi";
 import Switch from "react-switch";
 
 const Navbar = () => {
-  const [checked, setChecked] = useState(true);
+  let mode = true;
+  if (sessionStorage.getItem("Mode")) {
+    mode = sessionStorage.getItem("Mode") === `Dark` ? false : true;
+  }
 
+  let html = document.querySelector("html");
+  if (mode === false) {
+    html.classList.add("dark");
+  }
+  const [checked, setChecked] = useState(mode);
   const toggleDarkMode = () => {
-    let html = document.querySelector("html");
-
     if (checked) {
       html.classList.add("dark");
     } else {
       html.classList.remove("dark");
     }
     setChecked(!checked);
+    sessionStorage.setItem("Mode", checked ? `Dark` : `Light`);
   };
 
   return (

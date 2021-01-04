@@ -34,7 +34,7 @@ const AppProvider = ({ children }) => {
   }, [fetchData]);
 
   useEffect(() => {
-    setModalContent("Hover/Click on Image to view image in Full Size ");
+    setModalContent("Click on the Tags to view Images related to it. ");
     setIsModalOpen(true);
   }, []);
   return (
