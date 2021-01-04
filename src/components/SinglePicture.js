@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   AiOutlineDownload,
   AiOutlineHeart,
@@ -24,6 +25,7 @@ const SinglePicture = ({
           src={img}
           className="border-b-4 border-yellow-600 w-full min-h-full"
           alt={user}
+          onMouseOver={() => console.log(img)}
         />
       </div>
       <div className="p-2">
