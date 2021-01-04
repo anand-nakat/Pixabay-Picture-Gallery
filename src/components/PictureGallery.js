@@ -21,7 +21,7 @@ const PictureGallery = ({
   }
   return (
     <>
-      {searchTerm ? (
+      {searchTerm.length < 1 ? (
         ``
       ) : (
         <div className="dark:text-yellow-300 font-semibold my-4 px-5 text-indigo-700 text-2xl w-full">

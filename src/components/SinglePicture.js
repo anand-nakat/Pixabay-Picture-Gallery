@@ -11,7 +11,7 @@ const SinglePicture = ({
   favorites,
   tags,
   user,
-  pageURL,
+  largeImageURL: download,
   webformatURL: img,
   setSearchTerm,
 }) => {
@@ -41,7 +41,7 @@ const SinglePicture = ({
             <span> {comments}</span>
           </div>
           <a
-            href={pageURL}
+            href={download}
             target="_blank"
             rel="noreferrer"
             className="download-btn"

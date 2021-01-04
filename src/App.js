@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
 
-import Navbar from "./components/Navbar";
 import SearchForm from "./components/SearchForm";
 import PictureGallery from "./components/PictureGallery";
 
@@ -33,7 +32,6 @@ function App() {
 
   return (
     <>
-      <Navbar />
       <SearchForm setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
 
       <PictureGallery

@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer components {
+  /* UTILITY */
+  .flex-centered {
+    @apply flex justify-center items-center;
+  }
+
   /* NAVBAR */
   .navbar {
     @apply w-full p-4 md:px-5 dark:bg-gray-900  tracking-wide font-semibold 
@@ -19,9 +24,9 @@
     @apply fill-current text-2xl hover:text-yellow-400 text-gray-50;
   }
   .about-btn {
-    @apply border-2 border-yellow-400 dark:border-yellow-500 font-semibold 
-    hover:bg-yellow-400  hover:text-black p-2 mt-2 sm:mt-0 rounded 
-    text-xs text-yellow-100 uppercase;
+    @apply bg-yellow-600  font-semibold 
+    hover:bg-yellow-500   p-2 mt-2 sm:mt-0 rounded 
+    text-xs text-gray-50 uppercase;
   }
 
   /* Search Form */
