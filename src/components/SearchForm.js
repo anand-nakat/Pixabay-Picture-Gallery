@@ -12,9 +12,7 @@ const SearchForm = ({ setSearchTerm, searchTerm }) => {
         </p>
         <input
           type="text"
-          className="bg-white dark:bg-gray-400 dark:placeholder-gray-200 dark:text-gray-50 
-          focus:border-4 focus:border-black focus:outline-none font-medium mt-2 overflow-hidden placeholder-gray-400 px-3 py-1 rounded-lg shadow-lg 
-           text-gray-700 text-xl tracking-wide w-full capitalize"
+          className="input"
           placeholder="Trees,Space,Art,etc..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}

@@ -1,43 +1,59 @@
 import React from "react";
+import { useState } from "react";
+import { HiSun, HiMoon } from "react-icons/hi";
+import Switch from "react-switch";
 
 const Navbar = () => {
+  const [checked, setChecked] = useState(true);
   const modeSwitchBtn = React.useRef(null);
   const toggleDarkMode = () => {
     let html = document.querySelector("html");
 
-    if (html.classList.contains("dark")) {
-      html.classList.remove("dark");
-      modeSwitchBtn.current.innerText = "Switch Dark Mode";
-    } else {
+    if (checked) {
       html.classList.add("dark");
-      modeSwitchBtn.current.innerText = "Switch Light Mode";
+
+      //  modeSwitchBtn.current.innerText = "Switch Dark Mode";
+    } else {
+      html.classList.remove("dark");
+      // modeSwitchBtn.current.innerText = "Switch Light Mode";
     }
+    setChecked(!checked);
   };
 
   return (
-    <nav
-      className="w-full p-4 md:px-5 dark:bg-gray-900  tracking-wide font-semibold border-b-2 
-    border-yellow-500 shadow-lg flex justify-between items-center rounded-b bg-indigo-800"
-    >
+    <nav className="navbar">
       <div className="sm:text-2xl text-indigo-50 text-xl">
         <a href="/" className="hover:text-yellow-400">
           Pixabay Photo Gallery
         </a>
       </div>
-      <div className="flex space-x-2 sm:space-x-4 items-center">
-        <button
-          ref={modeSwitchBtn}
-          onClick={toggleDarkMode}
-          className="bg-yellow-400 focus:outline-none 
-          font-medium hover:bg-yellow-500 px-1 py-1.5  rounded sm:p-2 text-black text-xs uppercase"
-        >
-          Switch Dark Mode
-        </button>
-        <a
-          href="/about"
-          className="border-2 border-yellow-400 dark:border-yellow-500 font-semibold hover:bg-yellow-400
-           hover:border-0 hover:text-black p-2 rounded text-xs text-yellow-100 uppercase "
-        >
+      <div className="flex flex-col sm:flex-row space-y-1 space-x-2 sm:space-x-4 items-center">
+        <div className="flex items-center space-x-0.5">
+          <div className="flex flex-col items-center">
+            <HiMoon className="toggle-mode-icons" />
+            <p className="text-gray-50 font-medium text-xs space-y-1">Dark</p>
+          </div>
+          <Switch
+            checked={checked}
+            onChange={toggleDarkMode}
+            onClick={toggleDarkMode}
+            uncheckedIcon={false}
+            checkedIcon={false}
+            boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+            activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+            height={20}
+            width={48}
+            onColor={`#d97706`}
+            offColor={`#d97706`}
+            handleDiameter={3}
+          />
+          <div className="flex flex-col items-center">
+            <HiSun className="toggle-mode-icons" />
+            <p className="text-gray-50 font-medium text-xs space-y-1">Light</p>
+          </div>
+        </div>
+
+        <a href="/about" className="about-btn">
           About
         </a>
       </div>

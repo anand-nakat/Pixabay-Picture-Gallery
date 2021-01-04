@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* NAVBAR */
+  .navbar {
+    @apply w-full p-4 md:px-5 dark:bg-gray-900  tracking-wide font-semibold 
+    border-b-2 border-yellow-500 shadow-lg flex justify-between items-baseline  sm:items-center 
+    rounded-b bg-indigo-800;
+  }
+
+  .dark-mode-btn {
+    @apply bg-yellow-400 focus:outline-none 
+    font-medium hover:bg-yellow-500 px-1 py-1.5  
+    rounded sm:p-2 text-black text-xs uppercase;
+  }
+  .toggle-mode-icons {
+    @apply fill-current text-2xl hover:text-yellow-400 text-gray-50;
+  }
+  .about-btn {
+    @apply border-2 border-yellow-400 dark:border-yellow-500 font-semibold 
+    hover:bg-yellow-400  hover:text-black p-2 mt-2 sm:mt-0 rounded 
+    text-xs text-yellow-100 uppercase;
+  }
+  .input {
+    @apply bg-white dark:bg-gray-400 dark:placeholder-gray-200 dark:text-gray-50 
+    focus:border-black focus:outline-none font-medium mt-2 
+    overflow-hidden placeholder-gray-400 px-3 py-1 rounded-lg shadow-lg 
+    text-gray-700 text-xl tracking-wide w-full capitalize;
+  }
+}
