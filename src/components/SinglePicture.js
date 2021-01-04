@@ -13,11 +13,12 @@ const SinglePicture = ({
   user,
   pageURL,
   webformatURL: img,
+  setSearchTerm,
 }) => {
   const tagsArray = tags.split(",");
 
   return (
-    <article className="bg-gray-50 cursor-pointer dark:bg-gray-900 hover:scale-105 rounded-b-lg shadow-lg text-white transform transition-transform">
+    <article className="photo-card">
       <div>
         <img
           src={img}
@@ -27,15 +28,15 @@ const SinglePicture = ({
       </div>
       <div className="p-2">
         <div className="flex items-center justify-around mb-2 px-2 space-x-0.5">
-          <div className="flex items-center space-x-1 font-bold dark:text-white text-indigo-700">
+          <div className="stats-icon">
             <AiOutlineDownload className="fill-current text-xl  " />
             <span>{downloads}</span>
           </div>
-          <div className="flex items-center  dark:text-white text-indigo-700 space-x-1 font-bold">
+          <div className="stats-icon">
             <AiOutlineHeart className="fill-current text-xl" />
             <span> {favorites}</span>
           </div>
-          <div className="flex items-center  dark:text-white text-indigo-700 space-x-1 font-bold">
+          <div className="stats-icon">
             <AiOutlineComment className="fill-current text-xl" />
             <span> {comments}</span>
           </div>
@@ -43,9 +44,7 @@ const SinglePicture = ({
             href={pageURL}
             target="_blank"
             rel="noreferrer"
-            className="bg-indigo-600  dark:bg-yellow-600 dark:hover:bg-yellow-500 
-             dark:text-yellow-50 flex font-semibold hover:bg-indigo-700
-             hover:text-white items-center px-1 rounded text-indigo-50 text-sm transition-colors"
+            className="download-btn"
           >
             Download <HiDownload className="fill-current" />
           </a>
@@ -62,8 +61,8 @@ const SinglePicture = ({
             return (
               <span
                 key={index}
-                className="bg-indigo-500 cursor-pointer dark:bg-yellow-600 dark:hover:bg-yellow-500
-                 dark:text-yellow-50 hover:bg-indigo-400 px-2 py-1 rounded-full text-xs transition-colors"
+                className="tag"
+                onClick={(e) => setSearchTerm(tag)}
               >
                 {`${tag.trim()}`}
               </span>

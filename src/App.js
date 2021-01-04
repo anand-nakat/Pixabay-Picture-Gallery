@@ -27,13 +27,9 @@ function App() {
       setLoading(false);
     }
   }, [searchTerm]);
-  useEffect(
-    () => {
-      fetchData();
-    },
-    [searchTerm],
-    [fetchData]
-  );
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   return (
     <>
@@ -45,6 +41,7 @@ function App() {
         pictures={pictures}
         totalHits={totalResults}
         loading={loading}
+        setSearchTerm={setSearchTerm}
       />
     </>
   );

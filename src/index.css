@@ -23,10 +23,34 @@
     hover:bg-yellow-400  hover:text-black p-2 mt-2 sm:mt-0 rounded 
     text-xs text-yellow-100 uppercase;
   }
+
+  /* Search Form */
   .input {
     @apply bg-white dark:bg-gray-400 dark:placeholder-gray-200 dark:text-gray-50 
     focus:border-black focus:outline-none font-medium mt-2 
     overflow-hidden placeholder-gray-400 px-3 py-1 rounded-lg shadow-lg 
     text-gray-700 text-xl tracking-wide w-full capitalize;
   }
+  /* End Search Form */
+
+  /* SinglePicture  */
+  .photo-card {
+    @apply bg-gray-50 cursor-pointer dark:bg-gray-900 hover:scale-105 
+    rounded-b-lg shadow-lg text-white transform transition-transform;
+  }
+  .stats-icon {
+    @apply flex items-center space-x-1 font-bold dark:text-white
+       text-indigo-700;
+  }
+  .download-btn {
+    @apply bg-indigo-600  dark:bg-yellow-600 dark:hover:bg-yellow-500 
+    dark:text-yellow-50 flex font-semibold hover:bg-indigo-700
+    hover:text-white items-center px-1 rounded text-indigo-50 text-sm transition-colors;
+  }
+  .tag {
+    @apply bg-indigo-500 cursor-pointer dark:bg-yellow-600 
+      dark:hover:bg-yellow-500 dark:text-yellow-50 hover:bg-indigo-400 px-2 
+      py-1 rounded-full text-xs transition-colors;
+  }
+  /* SinglePicture End */
 }

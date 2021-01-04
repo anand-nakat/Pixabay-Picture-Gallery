@@ -2,7 +2,13 @@ import React from "react";
 import SinglePicture from "./SinglePicture";
 import Loading from "./Loading";
 
-const PictureGallery = ({ pictures, totalHits, loading, searchTerm }) => {
+const PictureGallery = ({
+  pictures,
+  totalHits,
+  loading,
+  searchTerm,
+  setSearchTerm,
+}) => {
   if (loading) {
     return <Loading />;
   }
@@ -15,7 +21,7 @@ const PictureGallery = ({ pictures, totalHits, loading, searchTerm }) => {
   }
   return (
     <>
-      {searchTerm.length < 1 ? (
+      {searchTerm ? (
         ``
       ) : (
         <div className="dark:text-yellow-300 font-semibold my-4 px-5 text-indigo-700 text-2xl w-full">
@@ -32,7 +38,7 @@ const PictureGallery = ({ pictures, totalHits, loading, searchTerm }) => {
             <SinglePicture
               key={picture.id}
               {...picture}
-              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
             />
           );
         })}

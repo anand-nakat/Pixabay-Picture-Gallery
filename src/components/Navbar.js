@@ -5,17 +5,14 @@ import Switch from "react-switch";
 
 const Navbar = () => {
   const [checked, setChecked] = useState(true);
-  const modeSwitchBtn = React.useRef(null);
+
   const toggleDarkMode = () => {
     let html = document.querySelector("html");
 
     if (checked) {
       html.classList.add("dark");
-
-      //  modeSwitchBtn.current.innerText = "Switch Dark Mode";
     } else {
       html.classList.remove("dark");
-      // modeSwitchBtn.current.innerText = "Switch Light Mode";
     }
     setChecked(!checked);
   };
@@ -45,7 +42,7 @@ const Navbar = () => {
             width={48}
             onColor={`#d97706`}
             offColor={`#d97706`}
-            handleDiameter={3}
+            handleDiameter={22}
           />
           <div className="flex flex-col items-center">
             <HiSun className="toggle-mode-icons" />
