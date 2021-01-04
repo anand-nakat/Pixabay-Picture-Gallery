@@ -1,10 +1,13 @@
 import React from "react";
-import App from "../App";
+
+import SearchForm from "../components/SearchForm";
+import PictureGallery from "../components/PictureGallery";
 
 const Home = () => {
   return (
     <>
-      <App />
+      <SearchForm />
+      <PictureGallery />
     </>
   );
 };

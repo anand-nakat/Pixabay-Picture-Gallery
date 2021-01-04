@@ -2,18 +2,19 @@ import React from "react";
 import SinglePicture from "./SinglePicture";
 import Loading from "./Loading";
 import Modal from "./Modal";
+import { useGlobalContext } from "../context";
 
-const PictureGallery = ({
-  pictures,
-  totalHits,
-  loading,
-  searchTerm,
-  setSearchTerm,
-  modalContent,
+const PictureGallery = () => {
+  const {
+    pictures,
+    totalHits,
+    loading,
+    searchTerm,
+    modalContent,
+    closeModal,
+    IsModalOpen,
+  } = useGlobalContext();
 
-  closeModal,
-  IsModalOpen,
-}) => {
   if (loading) {
     return <Loading />;
   }
@@ -45,13 +46,7 @@ const PictureGallery = ({
 
       <div className=" grid lg:grid-cols-3 grid- sm:grid-cols-2 p-4 gap-10 items-start">
         {pictures.map((picture) => {
-          return (
-            <SinglePicture
-              key={picture.id}
-              {...picture}
-              setSearchTerm={setSearchTerm}
-            />
-          );
+          return <SinglePicture key={picture.id} {...picture} />;
         })}
       </div>
     </>

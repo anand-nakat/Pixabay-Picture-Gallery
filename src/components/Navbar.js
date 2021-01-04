@@ -27,14 +27,19 @@ const Navbar = () => {
       </div>
       <div className="flex flex-col sm:flex-row space-y-1 space-x-2 sm:space-x-4 items-center">
         <div className="flex items-center space-x-0.5">
-          <div className="flex flex-col items-center">
+          <div
+            className="flex flex-col items-center cursor-pointer "
+            onClick={() => {
+              setChecked(false);
+              toggleDarkMode();
+            }}
+          >
             <HiMoon className="toggle-mode-icons" />
             <p className="text-gray-50 font-medium text-xs space-y-1">Dark</p>
           </div>
           <Switch
             checked={checked}
             onChange={toggleDarkMode}
-            onClick={toggleDarkMode}
             uncheckedIcon={false}
             checkedIcon={false}
             boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
@@ -45,7 +50,13 @@ const Navbar = () => {
             offColor={`#d97706`}
             handleDiameter={22}
           />
-          <div className="flex flex-col items-center">
+          <div
+            className="flex flex-col items-center  cursor-pointer "
+            onClick={() => {
+              setChecked(true);
+              toggleDarkMode();
+            }}
+          >
             <HiSun className="toggle-mode-icons" />
             <p className="text-gray-50 font-medium text-xs space-y-1">Light</p>
           </div>
