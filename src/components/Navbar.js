@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { HiSun, HiMoon } from "react-icons/hi";
 import Switch from "react-switch";
 
@@ -20,9 +21,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="sm:text-2xl text-indigo-50 text-xl">
-        <a href="/" className="hover:text-yellow-400">
+        <Link to="/" className="hover:text-yellow-400">
           Pixabay Photo Gallery
-        </a>
+        </Link>
       </div>
       <div className="flex flex-col sm:flex-row space-y-1 space-x-2 sm:space-x-4 items-center">
         <div className="flex items-center space-x-0.5">
@@ -50,9 +51,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        <a href="/about" className="about-btn">
+        <Link to="/about" className="about-btn">
           About
-        </a>
+        </Link>
       </div>
     </nav>
   );

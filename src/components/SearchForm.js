@@ -1,5 +1,5 @@
 import React from "react";
-
+import { AiOutlineSearch } from "react-icons/ai";
 const SearchForm = ({ setSearchTerm, searchTerm }) => {
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -1,6 +1,7 @@
 import React from "react";
 import SinglePicture from "./SinglePicture";
 import Loading from "./Loading";
+import Modal from "./Modal";
 
 const PictureGallery = ({
   pictures,
@@ -8,6 +9,10 @@ const PictureGallery = ({
   loading,
   searchTerm,
   setSearchTerm,
+  modalContent,
+
+  closeModal,
+  IsModalOpen,
 }) => {
   if (loading) {
     return <Loading />;
@@ -19,17 +24,23 @@ const PictureGallery = ({
       </h3>
     );
   }
+
   return (
     <>
-      {searchTerm ? (
+      {IsModalOpen && (
+        <Modal modalContent={modalContent} closeModal={closeModal} />
+      )}
+      {searchTerm.length < 1 ? (
         ``
       ) : (
-        <div className="dark:text-yellow-300 font-semibold my-4 px-5 text-indigo-700 text-2xl w-full">
-          Search Results for{" "}
-          <strong className="dark:text-gray-50 text-gray-800 capitalize">
-            {searchTerm}
-          </strong>
-        </div>
+        <>
+          <div className="dark:text-yellow-300 font-semibold my-4 px-5 text-indigo-700 text-2xl w-full">
+            Search Results for{" "}
+            <strong className="dark:text-gray-50 text-gray-800 capitalize">
+              {searchTerm}
+            </strong>
+          </div>
+        </>
       )}
 
       <div className=" grid lg:grid-cols-3 grid- sm:grid-cols-2 p-4 gap-10 items-start">
