@@ -62,13 +62,15 @@ const SinglePicture = ({
               Tags:{" "}
             </div>
             {tagsArray.map((tag, index) => {
+              tag = tag.trim();
               return (
                 <span
                   key={index}
-                  className="tag"
+                  className="tag text-center"
                   onClick={(e) => setSearchTerm(tag)}
+                  title={`Click to see Images related to ${tag}`}
                 >
-                  {`${tag.trim()}`}
+                  {`${tag}`}
                 </span>
               );
             })}

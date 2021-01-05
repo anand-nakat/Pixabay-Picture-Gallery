@@ -59,10 +59,19 @@
   }
   /* SinglePicture End */
 
+  /* About Page */
+  .heading {
+    @apply flex-centered border-yellow-500 dark:text-gray-50  m-auto mt-6 px-2 py-1 
+      rounded text-3xl text-center text-gray-800 tracking-wide  mb-10;
+  }
+
   /* Modal */
   .modal {
     @apply bg-green-200 mx-auto my-5 p-2 px-3 ring-1
        ring-green-800 rounded text-green-900 w-full sm:max-w-max  text-center;
+  }
+  .icons {
+    @apply inline-block mr-3 dark:text-yellow-500 fill-current text-4xl text-indigo-700;
   }
 }
 

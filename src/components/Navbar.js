@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiSun, HiMoon } from "react-icons/hi";
+import { FcGallery } from "react-icons/fc";
+
 import Switch from "react-switch";
 
 const Navbar = () => {
@@ -28,8 +30,12 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="sm:text-2xl text-indigo-50 text-xl">
-        <Link to="/" className="hover:text-yellow-400">
+        <Link
+          to="/"
+          className="flex flex-row-reverse hover:text-yellow-400 items-center"
+        >
           Pixabay Photo Gallery
+          <FcGallery className="mr-1.5 text-4xl" />
         </Link>
       </div>
       <div className="flex flex-col sm:flex-row space-y-1 space-x-2 sm:space-x-4 items-center">

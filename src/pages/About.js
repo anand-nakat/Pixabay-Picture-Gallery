@@ -1,16 +1,18 @@
 import React from "react";
 import { SiTailwindcss, SiReact } from "react-icons/si";
+import { FcAbout } from "react-icons/fc";
 
 const About = () => {
   return (
     <>
-      <div
-        className="border-yellow-500 dark:text-gray-50  m-auto mt-6 px-2 py-1 
-      rounded text-3xl text-center text-gray-800 tracking-wide w-max mb-10"
-      >
-        About Page
+      <div className="heading">
+        <span className="mr-1.5">
+          {" "}
+          <FcAbout />
+        </span>
+        About Page{" "}
       </div>
-      <main className="flex-centered h-72">
+      <main className="flex-centered h-72 pt-20 sm:pt-0">
         <div className="dark:text-gray-50 font-light text-xl -mt-14 px-3 ">
           This website makes use of the{" "}
           <a
@@ -39,11 +41,11 @@ const About = () => {
             Technical Stack required to build this website:
             <ul className="pl-4">
               <li className="pt-3">
-                <SiReact className="inline-block mr-3 dark:text-yellow-500 fill-current text-4xl text-indigo-700  " />
+                <SiReact className="icons  " />
                 <strong>React JS</strong>
               </li>
               <li className="pt-3">
-                <SiTailwindcss className="inline-block mr-3 dark:text-yellow-500 fill-current text-4xl text-indigo-700  " />
+                <SiTailwindcss className="icons  " />
                 <strong>Tailwind CSS</strong>
               </li>
             </ul>

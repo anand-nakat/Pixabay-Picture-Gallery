@@ -44,7 +44,7 @@ const PictureGallery = () => {
         </>
       )}
 
-      <div className=" grid lg:grid-cols-3 grid- sm:grid-cols-2 p-4 gap-10 items-start">
+      <div className=" grid lg:grid-cols-3 grid- sm:grid-cols-2 p-4 gap-10 items-start pb-36">
         {pictures.map((picture) => {
           return <SinglePicture key={picture.id} {...picture} />;
         })}

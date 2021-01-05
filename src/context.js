@@ -31,7 +31,7 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, [fetchData, searchTerm]);
 
   useEffect(() => {
     setModalContent("Click on the Tags to view Images related to it. ");
