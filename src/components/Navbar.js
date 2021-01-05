@@ -38,7 +38,7 @@ const Navbar = () => {
           <FcGallery className="mr-1.5 text-4xl" />
         </Link>
       </div>
-      <div className="flex flex-col sm:flex-row space-y-1 space-x-2 sm:space-x-4 items-center">
+      <div className="flex flex-col-reverse sm:flex-row space-y-1 space-x-2 sm:space-x-4 items-center">
         <div className="flex items-center space-x-0.5">
           <div
             className="flex flex-col items-center cursor-pointer "
@@ -48,7 +48,7 @@ const Navbar = () => {
             }}
           >
             <HiMoon className="toggle-mode-icons" />
-            <p className="text-gray-50 font-medium text-xs space-y-1">Dark</p>
+            <p className="text-gray-50 font-medium text-xs ">Dark</p>
           </div>
           <Switch
             checked={checked}

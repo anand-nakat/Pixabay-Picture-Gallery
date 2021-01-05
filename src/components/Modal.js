@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
+import { useGlobalContext } from "../context";
 
-const Modal = ({ modalContent, closeModal }) => {
+const Modal = () => {
+  const { modalContent, closeModal } = useGlobalContext();
   useEffect(() => {
     let timeout = setTimeout(() => {
       closeModal();
@@ -8,7 +10,7 @@ const Modal = ({ modalContent, closeModal }) => {
     return () => {
       clearTimeout(timeout);
     };
-  }, []);
+  }, [closeModal]); // eslint-disable-next-line
   return <div className="modal newClass">{modalContent}</div>;
 };
 

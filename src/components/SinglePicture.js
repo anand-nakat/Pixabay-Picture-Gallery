@@ -16,8 +16,11 @@ const SinglePicture = ({
   largeImageURL: download,
   webformatURL: img,
 }) => {
-  const { setSearchTerm } = useGlobalContext();
+  const { setSearchTerm, setImageURL } = useGlobalContext();
   const tagsArray = tags.split(",");
+  const handleClick = (imageURL) => {
+    setImageURL(imageURL);
+  };
 
   return (
     <>
@@ -27,7 +30,7 @@ const SinglePicture = ({
             src={img}
             className="border-b-4 border-yellow-600 w-full min-h-full"
             alt={user}
-            onMouseOver={() => console.log(download)}
+            onClick={() => handleClick(download)}
           />
         </div>
         <div className="p-2">

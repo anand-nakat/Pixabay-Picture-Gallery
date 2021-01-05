@@ -11,7 +11,7 @@
   /* NAVBAR */
   .navbar {
     @apply w-full p-4 md:px-5 dark:bg-gray-900  tracking-wide font-semibold 
-    border-b-2 border-yellow-500 shadow-lg flex justify-between items-baseline  sm:items-center 
+    border-b-2 border-yellow-500 shadow-lg flex justify-between items-start  sm:items-center 
     rounded-b bg-indigo-800;
   }
 
@@ -34,7 +34,7 @@
     @apply bg-white dark:bg-gray-400 dark:placeholder-gray-200 dark:text-gray-50 
     focus:border-black focus:outline-none font-medium mt-2 
     overflow-hidden placeholder-gray-400 px-3 py-1 pl-9 rounded-lg shadow-lg 
-    text-gray-700 text-xl tracking-wide w-full capitalize;
+    text-gray-700 text-xl tracking-wide w-full capitalize focus:ring-2 focus:ring-blue-300;
   }
   /* End Search Form */
 

@@ -8,10 +8,10 @@ const AppProvider = ({ children }) => {
   const [pictures, setPictures] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [totalResults, setTotalResults] = useState(0);
+  const [imageURL, setImageURL] = useState("");
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const closeFullscreenImage = () => setImageURL("");
+  const closeModal = useCallback(() => setIsModalOpen(false), []);
 
   const fetchData = useCallback(async () => {
     const url = `https://pixabay.com/api/?key=${process.env.REACT_APP_API_KEY}&q=${searchTerm}&image_type=photo&pretty=true`;
@@ -34,7 +34,7 @@ const AppProvider = ({ children }) => {
   }, [fetchData, searchTerm]);
 
   useEffect(() => {
-    setModalContent("Click on the Tags to view Images related to it. ");
+    setModalContent("Click on the Image to view it in Full Size");
     setIsModalOpen(true);
   }, []);
   return (
@@ -42,12 +42,16 @@ const AppProvider = ({ children }) => {
       value={{
         loading,
         IsModalOpen,
+        setIsModalOpen,
+        closeModal,
         modalContent,
         pictures,
         searchTerm,
         totalResults,
         setSearchTerm,
-        closeModal,
+        imageURL,
+        setImageURL,
+        closeFullscreenImage,
       }}
     >
       {children}
