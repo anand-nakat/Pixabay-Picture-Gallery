@@ -8,7 +8,7 @@ const SearchForm = () => {
     e.preventDefault();
   };
   return (
-    <div className="flex justify-center items-center p-4">
+    <div className="flex justify-center items-center p-4 mt-6">
       <form onSubmit={handleSubmit} className="max-w-sm w-4/5">
         <p className="dark:text-gray-50 font-light mt-5 text-gray-900 text-lg">
           Search Your Favorite Pictures

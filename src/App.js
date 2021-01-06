@@ -6,12 +6,13 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
-
+import ThemeSwitch from "./components/ThemeSwitch";
 function App() {
   return (
     <>
       <Router>
         <Navbar />
+        <ThemeSwitch />
         <Switch>
           <Route exact path="/">
             <Home />

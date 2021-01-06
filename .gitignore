@@ -3,3 +3,7 @@ node_modules
 data/
 .idea/
 .eslintcache
+build/
+debug.log
+.gitignore
+

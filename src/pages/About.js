@@ -13,7 +13,7 @@ const About = () => {
         About Page{" "}
       </div>
       <main className="flex-centered h-72 pt-20 sm:pt-0">
-        <div className="dark:text-gray-50 font-light text-xl -mt-14 px-3 ">
+        <div className="-mt-20 dark:text-gray-50 font-light font-raleway px-3 text-xl ">
           This website makes use of the{" "}
           <a
             className="font-medium text-indigo-700 dark:text-yellow-500"

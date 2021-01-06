@@ -11,7 +11,11 @@ const Modal = () => {
       clearTimeout(timeout);
     };
   }, [closeModal]); // eslint-disable-next-line
-  return <div className="modal newClass">{modalContent}</div>;
+  return (
+    <div className="modal newClass">
+      <span>{modalContent}</span>
+    </div>
+  );
 };
 
 export default Modal;

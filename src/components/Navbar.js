@@ -1,10 +1,8 @@
 import React from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { HiSun, HiMoon } from "react-icons/hi";
-import { FcGallery } from "react-icons/fc";
 
-import Switch from "react-switch";
+import { Link } from "react-router-dom";
+
+import { FcGallery } from "react-icons/fc";
 
 const Navbar = () => {
   let mode = true;
@@ -16,17 +14,6 @@ const Navbar = () => {
   if (mode === false) {
     html.classList.add("dark");
   }
-  const [checked, setChecked] = useState(mode);
-  const toggleDarkMode = () => {
-    if (checked) {
-      html.classList.add("dark");
-    } else {
-      html.classList.remove("dark");
-    }
-    setChecked(!checked);
-    sessionStorage.setItem("Mode", checked ? `Dark` : `Light`);
-  };
-
   return (
     <nav className="navbar">
       <div className="sm:text-2xl text-indigo-50 text-xl">
@@ -38,47 +25,10 @@ const Navbar = () => {
           <FcGallery className="mr-1.5 text-4xl" />
         </Link>
       </div>
-      <div className="flex flex-col-reverse sm:flex-row space-y-1 space-x-2 sm:space-x-4 items-center">
-        <div className="flex items-center space-x-0.5">
-          <div
-            className="flex flex-col items-center cursor-pointer "
-            onClick={() => {
-              setChecked(false);
-              toggleDarkMode();
-            }}
-          >
-            <HiMoon className="toggle-mode-icons" />
-            <p className="text-gray-50 font-medium text-xs ">Dark</p>
-          </div>
-          <Switch
-            checked={checked}
-            onChange={toggleDarkMode}
-            uncheckedIcon={false}
-            checkedIcon={false}
-            boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-            activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-            height={20}
-            width={48}
-            onColor={`#d97706`}
-            offColor={`#d97706`}
-            handleDiameter={22}
-          />
-          <div
-            className="flex flex-col items-center  cursor-pointer "
-            onClick={() => {
-              setChecked(true);
-              toggleDarkMode();
-            }}
-          >
-            <HiSun className="toggle-mode-icons" />
-            <p className="text-gray-50 font-medium text-xs space-y-1">Light</p>
-          </div>
-        </div>
 
-        <Link to="/about" className="about-btn">
-          About
-        </Link>
-      </div>
+      <Link to="/about" className="about-btn">
+        About
+      </Link>
     </nav>
   );
 };
