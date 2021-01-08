@@ -23,8 +23,12 @@ Link to Live Website: [Pixabay Picture Gallery](https://pixabay-photo-gallery.ne
 
   ![Search Result](https://user-images.githubusercontent.com/60821265/103992666-75612600-51ba-11eb-9b82-cb5479fbb4cc.jpg)
 
-- ##### If you feel like typing, you can just click on the tags on the image card to see images related to it
+- ##### If you don't feel like typing, you can just click on the tags on the image card to see images related to it.
+
   ![Tag Bubble](https://user-images.githubusercontent.com/60821265/103992682-7bef9d80-51ba-11eb-827e-e342adf734fb.jpg)
+
+  - ##### Responsive Design across all viewports.
+    ![Mobile Friendly](https://user-images.githubusercontent.com/60821265/103995031-dd653b80-51bd-11eb-985a-0c841478e63e.jpg)
 
 To run this project locally, make sure you have npm installed.
 
