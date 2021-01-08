@@ -4,7 +4,7 @@ Pixabay Picture Gallery makes use of the **Pixabay API** to showcase trending pi
 The website is created using **React JS Library** and **Tailwind CSS** Framework.
 
 Link to Live Website: [Pixabay Picture Gallery](https://pixabay-photo-gallery.netlify.app/)
-
+![Light Theme](src/images/light mode.png)
 To run this project locally, make sure you have npm installed.
 
 In the project directory, you can run:
